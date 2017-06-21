@@ -1,8 +1,8 @@
-class ExpandedTestAdsController < ApplicationController
+class ExpandedTextAdsController < ApplicationController
   before_action :set_expanded_text_ad, only: [:show, :update, :destroy]
 
   def index
-    @expanded_text_ads = ExpandedTestAd.all
+    @expanded_text_ads = ExpandedTextAd.all
 
     render json: @expanded_text_ads
   end
@@ -12,7 +12,7 @@ class ExpandedTestAdsController < ApplicationController
   end
 
   def create
-    @expanded_text_ad = ExpandedTestAd.new(expanded_text_ad_params)
+    @expanded_text_ad = ExpandedTextAd.new(expanded_text_ad_params)
 
     if @expanded_text_ad.save
       render json: @expanded_text_ad, status: :created, location: @expanded_text_ad
@@ -35,7 +35,7 @@ class ExpandedTestAdsController < ApplicationController
 
   private
     def set_expanded_text_ad
-      @expanded_text_ad = ExpandedTestAd.find(params[:id])
+      @expanded_text_ad = ExpandedTextAd.find(params[:id])
     end
 
     def expanded_text_ad_params
