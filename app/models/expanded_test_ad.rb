@@ -1,0 +1,2 @@
+class ExpandedTestAd < ApplicationRecord
+end
