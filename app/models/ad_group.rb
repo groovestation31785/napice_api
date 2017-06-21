@@ -1,0 +1,2 @@
+class AdGroup < ApplicationRecord
+end
