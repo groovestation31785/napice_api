@@ -43,7 +43,7 @@ RSpec.describe ExpandedTestAdsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      expanded_test_ad = ExpandedTestAd.create! valid_attributes
+      expanded_text_ad = ExpandedTestAd.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,8 +51,8 @@ RSpec.describe ExpandedTestAdsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      expanded_test_ad = ExpandedTestAd.create! valid_attributes
-      get :show, params: {id: expanded_test_ad.to_param}, session: valid_session
+      expanded_text_ad = ExpandedTestAd.create! valid_attributes
+      get :show, params: {id: expanded_text_ad.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
@@ -61,23 +61,23 @@ RSpec.describe ExpandedTestAdsController, type: :controller do
     context "with valid params" do
       it "creates a new ExpandedTestAd" do
         expect {
-          post :create, params: {expanded_test_ad: valid_attributes}, session: valid_session
+          post :create, params: {expanded_text_ad: valid_attributes}, session: valid_session
         }.to change(ExpandedTestAd, :count).by(1)
       end
 
-      it "renders a JSON response with the new expanded_test_ad" do
+      it "renders a JSON response with the new expanded_text_ad" do
 
-        post :create, params: {expanded_test_ad: valid_attributes}, session: valid_session
+        post :create, params: {expanded_text_ad: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json')
-        expect(response.location).to eq(expanded_test_ad_url(ExpandedTestAd.last))
+        expect(response.location).to eq(expanded_text_ad_url(ExpandedTestAd.last))
       end
     end
 
     context "with invalid params" do
-      it "renders a JSON response with errors for the new expanded_test_ad" do
+      it "renders a JSON response with errors for the new expanded_text_ad" do
 
-        post :create, params: {expanded_test_ad: invalid_attributes}, session: valid_session
+        post :create, params: {expanded_text_ad: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -90,27 +90,27 @@ RSpec.describe ExpandedTestAdsController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested expanded_test_ad" do
-        expanded_test_ad = ExpandedTestAd.create! valid_attributes
-        put :update, params: {id: expanded_test_ad.to_param, expanded_test_ad: new_attributes}, session: valid_session
-        expanded_test_ad.reload
+      it "updates the requested expanded_text_ad" do
+        expanded_text_ad = ExpandedTestAd.create! valid_attributes
+        put :update, params: {id: expanded_text_ad.to_param, expanded_text_ad: new_attributes}, session: valid_session
+        expanded_text_ad.reload
         skip("Add assertions for updated state")
       end
 
-      it "renders a JSON response with the expanded_test_ad" do
-        expanded_test_ad = ExpandedTestAd.create! valid_attributes
+      it "renders a JSON response with the expanded_text_ad" do
+        expanded_text_ad = ExpandedTestAd.create! valid_attributes
 
-        put :update, params: {id: expanded_test_ad.to_param, expanded_test_ad: valid_attributes}, session: valid_session
+        put :update, params: {id: expanded_text_ad.to_param, expanded_text_ad: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq('application/json')
       end
     end
 
     context "with invalid params" do
-      it "renders a JSON response with errors for the expanded_test_ad" do
-        expanded_test_ad = ExpandedTestAd.create! valid_attributes
+      it "renders a JSON response with errors for the expanded_text_ad" do
+        expanded_text_ad = ExpandedTestAd.create! valid_attributes
 
-        put :update, params: {id: expanded_test_ad.to_param, expanded_test_ad: invalid_attributes}, session: valid_session
+        put :update, params: {id: expanded_text_ad.to_param, expanded_text_ad: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -118,10 +118,10 @@ RSpec.describe ExpandedTestAdsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested expanded_test_ad" do
-      expanded_test_ad = ExpandedTestAd.create! valid_attributes
+    it "destroys the requested expanded_text_ad" do
+      expanded_text_ad = ExpandedTestAd.create! valid_attributes
       expect {
-        delete :destroy, params: {id: expanded_test_ad.to_param}, session: valid_session
+        delete :destroy, params: {id: expanded_text_ad.to_param}, session: valid_session
       }.to change(ExpandedTestAd, :count).by(-1)
     end
   end

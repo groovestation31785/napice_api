@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :expanded_test_ad do
+  factory :expanded_text_ad do
     xsi_type "MyString"
-    ad_group_id 1
+    ad_group
     headline_part1 "MyString"
     headline_part2 "MyString"
     description "MyString"

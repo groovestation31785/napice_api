@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170620235820) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "expanded_test_ads", force: :cascade do |t|
+  create_table "expanded_text_ads", force: :cascade do |t|
     t.string   "xsi_type"
     t.integer  "ad_group_id"
     t.string   "headline_part1"
