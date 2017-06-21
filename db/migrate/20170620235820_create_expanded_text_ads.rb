@@ -1,6 +1,6 @@
-class CreateExpandedTestAds < ActiveRecord::Migration[5.0]
+class CreateExpandedTextAds < ActiveRecord::Migration[5.0]
   def change
-    create_table :expanded_test_ads do |t|
+    create_table :expanded_text_ads do |t|
       t.string :xsi_type
       t.integer :ad_group_id
       t.string :headline_part1
