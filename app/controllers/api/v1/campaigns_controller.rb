@@ -8,7 +8,11 @@ module Api::V1
     end
 
     def show
-      render json: @campaign
+      if @campaign
+        render json: @campaign
+      else
+        render status: 404
+      end
     end
 
     def create
@@ -35,7 +39,7 @@ module Api::V1
 
     private
       def set_campaign
-        @campaign = Campaign.find(params[:id])
+        @campaign = Campaign.find_by_id(params[:id])
       end
 
       def campaign_params
