@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :ad_group do
-    name "MyString"
-    status "MyString"
+    name "Facebook Ads - Napice"
+    status "ENABLED"
     campaign
   end
 end
