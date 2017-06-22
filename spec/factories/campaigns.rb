@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :campaign do
-    name "MyString"
-    status "MyString"
-    budget "MyString"
-    advertising_channel_type "MyString"
+    name "Interplanetary Cruise"
+    status "PAUSED"
+    budget "3000"
+    advertising_channel_type "SEARCH"
   end
 end

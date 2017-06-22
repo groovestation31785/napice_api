@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :expanded_text_ad do
-    xsi_type "MyString"
+    xsi_type "ExpandedTextAd"
     ad_group
-    headline_part1 "MyString"
-    headline_part2 "MyString"
-    description "MyString"
-    path1 "MyString"
-    path2 "MyString"
+    headline_part1 "Developers from Mars"
+    headline_part2 ""
+    description "Buy your tickets now!"
+    path1 "all-inclusive"
+    path2 "deals"
   end
 end
