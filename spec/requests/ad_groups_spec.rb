@@ -11,7 +11,7 @@ RSpec.describe "AdGroups API", type: :request do
       expect(json.size).to eq(1)
     end
 
-    it 'returns status code of 200' do
+    it "returns status code of 200" do
       expect(response).to have_http_status(200)
     end
   end
