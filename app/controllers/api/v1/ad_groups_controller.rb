@@ -4,12 +4,15 @@ module Api::V1
 
     def index
       @ad_groups = AdGroup.all
-
       render json: @ad_groups
     end
 
     def show
-      render json: @ad_group
+      if @ad_group
+        render json: @ad_group
+      else
+        render status :404
+      end
     end
 
     def create
@@ -36,7 +39,7 @@ module Api::V1
 
     private
       def set_ad_group
-        @ad_group = AdGroup.find(params[:id])
+        @ad_group = AdGroup.find_by_id(params[:id])
       end
 
       def ad_group_params

@@ -4,12 +4,15 @@ module Api::V1
 
     def index
       @expanded_text_ads = ExpandedTextAd.all
-
       render json: @expanded_text_ads
     end
 
     def show
-      render json: @expanded_text_ad
+      if @expanded_text_ad
+        render json: @expanded_text_ad
+      else
+        render status :404
+      end
     end
 
     def create
@@ -36,7 +39,7 @@ module Api::V1
 
     private
       def set_expanded_text_ad
-        @expanded_text_ad = ExpandedTextAd.find(params[:id])
+        @expanded_text_ad = ExpandedTextAd.find_by_id(params[:id])
       end
 
       def expanded_text_ad_params
