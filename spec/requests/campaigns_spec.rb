@@ -6,7 +6,7 @@ RSpec.describe "Campaigns API", type: :request do
   let(:campaign_id) { campaign.id }
 
   describe "GET /campaigns" do
-    before { get api_v1_campaigns_path }
+    before { get '/api/v1/campaigns' }
 
     it "sends a list of campaigns" do
       expect(json).not_to be_empty
